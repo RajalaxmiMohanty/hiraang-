@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 180 80% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 180 80% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 80% 15%;
+    --primary: 180 88% 15%;
+    --primary-foreground: 40 50% 88%;
+    --secondary: 40 50% 88%;
+    --secondary-foreground: 180 88% 15%;
+    --muted: 180 20% 96%;
+    --muted-foreground: 180 10% 45%;
+    --accent: 40 60% 75%;
+    --accent-foreground: 180 88% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 180 20% 90%;
+    --input: 180 20% 90%;
+    --ring: 180 88% 15%;
+    --radius: 0.5rem;
+    --gold: 40 50% 88%;
+    --teal: 180 88% 15%;
+    --teal-light: 180 60% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .shadow-elegant {
+    box-shadow: 0 10px 30px -10px hsl(180 88% 15% / 0.15);
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-0.5;
+  }
+
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    .print-only {
+      display: block !important;
+    }
+  }
+
+  .print-only {
+    display: none;
+  }
+}
